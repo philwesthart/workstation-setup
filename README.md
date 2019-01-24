@@ -1,0 +1,3 @@
+# workstation-setup
+
+bashrc etc
