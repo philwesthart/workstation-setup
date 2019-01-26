@@ -7,6 +7,14 @@ alias la='ls -a'
 alias up='cd ..'
 
 
+function cdr() {
+  original_dir="$CWD"
+  while ! [[ -d .git ]] ; do
+    cd ..
+  done
+}
+
+
 
 # Git stuff
 alias gs='git status -sb'
