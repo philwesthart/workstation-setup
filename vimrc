@@ -3,7 +3,7 @@ syntax on
 
 filetype indent plugin on
 
-"execute pathogen#infect()
+execute pathogen#infect()
 
 set mouse=a
 set number
@@ -47,3 +47,6 @@ hi SpellLocal cterm=underline
 " And load any vimrc's in the local directory
 let g:localrc_filename='vimrc.local'
 
+
+" nerd tree
+map <C-b> :NERDTreeToggle<CR>
