@@ -22,6 +22,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias glog='git log --max-count 10 --graph --date=relative --pretty=format:"%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset"'
 
+
 function :w() {
   git add -A
   git add -u
@@ -60,23 +61,23 @@ function push() {
 
 # git prompt stuff
 
-# Include git-prompt.sh where the __git_ps1 function is defined
-# It can be downloaded from http://git-prompt.sh/. or github.com/git/git/contrib/completion
-source ~/.git-prompt.sh
-
-# Displays a * and + next to the branch name if there are unstaged (*) and staged (+) changes
-export GIT_PS1_SHOWDIRTYSTATE=true
-
-# Displays a % if there are untracked files
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-
 # Color variables
 GREEN="\[\e[1;32m\]"
 CYAN="\[\e[1;36m\]"
 MAGENTA="\[\e[1;35m\]"
 ENDCOLOR="\[\e[m\]"         # ends the last color
 
-export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_ps1 ' |%s|') ${CYAN}$ ${ENDCOLOR}"
+function __git_branch() {
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='detached*'
+    fi
+    echo " $branch"
+  fi
+}
+
+export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_branch) ${CYAN}$ ${ENDCOLOR}"
 
 
 
@@ -88,3 +89,5 @@ export CXX=$(which clang++)
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
