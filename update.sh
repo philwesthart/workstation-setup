@@ -3,6 +3,7 @@
 set -e
 
 DIR="$(cd $( dirname ${BASH_SOURCE[0]}) && pwd)"
+cd "$DIR"
 
 # link config files
 ln -sfT "$DIR/bashrc" "$HOME/.bashrc"
@@ -33,4 +34,15 @@ clone_or_pull --depth=1 https://github.com/scrooloose/syntastic.git
 clone_or_pull https://github.com/tpope/vim-sensible
 clone_or_pull https://github.com/tpope/vim-fugitive
 clone_or_pull https://github.com/scrooloose/nerdtree
+
+
+#
+# hive stuff
+#
+if [ -d "$DIR"/n ]; then
+  echo '[ok] n installed'
+else
+  echo installing n
+  git clone https://github.com/tj/n.git
+fi
 

@@ -1,6 +1,4 @@
 
-
-
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
@@ -77,7 +75,7 @@ function __git_branch() {
   fi
 }
 
-export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_branch) ${CYAN}$ ${ENDCOLOR}"
+export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_branch) ${CYAN}> ${ENDCOLOR}"
 
 
 
@@ -89,5 +87,7 @@ export CXX=$(which clang++)
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# power to the people
+export N_PREFIX="$HOME/workstation-setup/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
