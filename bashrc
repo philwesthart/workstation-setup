@@ -90,4 +90,8 @@ export EDITOR="$VISUAL"
 # power to the people
 export N_PREFIX="$HOME/workstation-setup/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
 
+# wow such new paths
+while read path; do
+  [[ :$PATH: == *":$path:"* ]] || PATH="$path:$PATH"
+done <"$HOME/workstation-setup/paths"
 
