@@ -8,6 +8,7 @@ cd "$DIR"
 # link config files
 ln -sfT "$DIR/bashrc" "$HOME/.bashrc"
 ln -sfT "$DIR/vimrc" "$HOME/.vimrc"
+ln -sfT "$DIR/inputrc" "$HOME/.inputrc"
 
 # link .vim dir
 ln -nsf "$DIR/vim" "$HOME/.vim"

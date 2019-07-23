@@ -12,6 +12,15 @@ function cdr() {
   done
 }
 
+# wizardry
+function accio() {
+  grep -rn "$*" *
+}
+
+function reparo() {
+  standard --fix "$*"
+}
+
 
 
 # Git stuff
