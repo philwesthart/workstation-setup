@@ -5,7 +5,6 @@ filetype indent plugin on
 
 execute pathogen#infect()
 
-set mouse=a
 set number
 set tabstop=2
 set shiftwidth=2
@@ -50,3 +49,17 @@ let g:localrc_filename='vimrc.local'
 
 " nerd tree
 map <C-b> :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree "Launch NERD Tree on start
+au VimEnter * wincmd l " Set focus to the right (non-NERDTree) split
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "Close vim if NERDTree is the only remaining split
+
+" Syntastic 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
