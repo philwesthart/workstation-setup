@@ -6,9 +6,10 @@ filetype indent plugin on
 execute pathogen#infect()
 
 set number
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
+set directory=$HOME/.vim/swapfiles//
 
 
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
