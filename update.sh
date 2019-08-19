@@ -29,6 +29,7 @@ function clone_or_pull() {
   fi
 }
 
+# Plugins from Peter
 clone_or_pull https://github.com/ervandew/supertab
 clone_or_pull https://github.com/kien/ctrlp.vim
 clone_or_pull --depth=1 https://github.com/scrooloose/syntastic.git
@@ -36,14 +37,7 @@ clone_or_pull https://github.com/tpope/vim-sensible
 clone_or_pull https://github.com/tpope/vim-fugitive
 clone_or_pull https://github.com/scrooloose/nerdtree
 
-
-#
-# hive stuff
-#
-if [ -d "$DIR"/n ]; then
-  echo '[ok] n installed'
-else
-  echo installing n
-  git clone https://github.com/tj/n.git
-fi
+#Phils Additional vim plugins
+clone_or_pull https://github.com/vim-airline/vim-airline
+clone_or_pull https://github.com/airblade/vim-gitgutter
 
