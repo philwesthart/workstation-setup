@@ -41,3 +41,6 @@ clone_or_pull https://github.com/scrooloose/nerdtree
 clone_or_pull https://github.com/vim-airline/vim-airline
 clone_or_pull https://github.com/airblade/vim-gitgutter
 
+# Dev tools
+sudo apt install meld htop byobu 
+
