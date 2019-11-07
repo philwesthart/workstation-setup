@@ -4,13 +4,17 @@ syntax on
 filetype indent plugin on
 
 execute pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
 
 set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set directory=$HOME/.vim/swapfiles//
-
+set list
+set listchars=tab:>-
 
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 

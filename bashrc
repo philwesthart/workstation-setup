@@ -86,7 +86,8 @@ function __git_branch() {
 
 export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_branch) ${CYAN}> ${ENDCOLOR}"
 
-
+# Enable git completions
+source /usr/share/bash-completion/completions/git
 
 
 # default programs
