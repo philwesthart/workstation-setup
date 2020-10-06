@@ -48,6 +48,6 @@ for root, dirs, files in os.walk(start_dir):
         all_cmds.append(cmd_array)
 
 #Print summary
-print("Commands executed:")
+print(str(len(all_cmds)) + " commands executed:")
 for cmd in all_cmds:
     print (" ".join(cmd))
