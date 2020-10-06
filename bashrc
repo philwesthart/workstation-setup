@@ -87,13 +87,12 @@ function __git_branch() {
 export PS1="${GREEN}\u@\h ${CYAN}\w${MAGENTA}\$(__git_branch) ${CYAN}> ${ENDCOLOR}"
 
 # Enable git completions
-source /usr/share/bash-completion/completions/git
-
+GITCOMP=/usr/share/bash-completion/completions/git
+if test -f "$GITCOMP"; then
+   source $GITCOMP
+fi
 
 # default programs
-export CC=$(which clang)
-export CXX=$(which clang++)
-
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -101,7 +100,12 @@ export EDITOR="$VISUAL"
 export N_PREFIX="$HOME/workstation-setup/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
 
 # wow such new paths
+PATHS_FILE="$HOME/workstation-setup/paths"
+if [ ! -f "$PATHS_FILE" ] ; then
+   touch $PATHS_FILE
+fi
+
 while read path; do
   [[ :$PATH: == *":$path:"* ]] || PATH="$path:$PATH"
-done <"$HOME/workstation-setup/paths"
+done <$PATHS_FILE
 
