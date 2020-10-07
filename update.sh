@@ -5,6 +5,20 @@ set -e
 DIR="$(cd $( dirname ${BASH_SOURCE[0]}) && pwd)"
 cd "$DIR"
 
+# Move existing bashrc to local bashrc
+LOCAL_BASHRC="$HOME/.localbashrc"
+BASHRC="$HOME/.bashrc"
+# only do this if localbashrc hasn't been made yet
+if [ ! -f "$LOCAL_BASHRC" ] ; then
+    # If there is an existing bashrc, move to local
+    if test -f "$BASHRC"; then
+        mv $BASHRC $LOCAL_BASHRC
+    # otherwise, make a blank localbashrc
+    else
+        touch $LOCAL_BASHRC
+    fi
+fi
+
 # link config files
 ln -sfT "$DIR/bashrc" "$HOME/.bashrc"
 ln -sfT "$DIR/vimrc" "$HOME/.vimrc"

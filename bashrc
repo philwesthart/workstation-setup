@@ -1,3 +1,8 @@
+# source local bashrc if present
+LOCAL_BASHRC="$HOME/.localbashrc"
+if test -f "$LOCAL_BASHRC"; then
+   source "$LOCAL_BASHRC"
+fi
 
 alias ls='ls --color=auto'
 alias ll='ls -l'
@@ -108,4 +113,3 @@ fi
 while read path; do
   [[ :$PATH: == *":$path:"* ]] || PATH="$path:$PATH"
 done <$PATHS_FILE
-
