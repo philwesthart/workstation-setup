@@ -9,6 +9,7 @@ cd "$DIR"
 ln -sfT "$DIR/bashrc" "$HOME/.bashrc"
 ln -sfT "$DIR/vimrc" "$HOME/.vimrc"
 ln -sfT "$DIR/inputrc" "$HOME/.inputrc"
+ln -sfT "$DIR/gdbinit" "$HOME/.gdbinit"
 
 # link .vim dir
 ln -nsf "$DIR/vim" "$HOME/.vim"
