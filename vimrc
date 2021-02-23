@@ -68,3 +68,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" Snippets
+nnoremap ,ch :-1read $HOME/.vim/snippets/c_descr<CR>
+nnoremap ,pyh :-1read $HOME/.vim/snippets/py_descr<CR>
+nnoremap ,shh :-1read $HOME/.vim/snippets/bash_descr<CR>
+
