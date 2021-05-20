@@ -25,3 +25,5 @@
 * ctrl a X       -> remove active window from split screen
 * ctrl a O       -> logout active window (disable output)
 * ctrl a I       -> login active window (enable output)
+
+Credit: https://gist.github.com/fredrick/1216878
