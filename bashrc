@@ -4,10 +4,13 @@ if test -f "$LOCAL_BASHRC"; then
    source "$LOCAL_BASHRC"
 fi
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias up='cd ..'
+alias screen_help='cat ${SCRIPT_DIR}/screen_help'
 
 # Git stuff
 alias gs='git status -sb'
