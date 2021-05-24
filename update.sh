@@ -44,6 +44,10 @@ function clone_or_pull() {
   fi
 }
 
+echo "Installing Pathogen..."
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 # Plugins from Peter
 clone_or_pull https://github.com/ervandew/supertab
 clone_or_pull https://github.com/kien/ctrlp.vim
