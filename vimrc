@@ -73,3 +73,5 @@ nnoremap ,ch :-1read $HOME/.vim/snippets/c_descr<CR>
 nnoremap ,pyh :-1read $HOME/.vim/snippets/py_descr<CR>
 nnoremap ,shh :-1read $HOME/.vim/snippets/bash_descr<CR>
 
+" Tag list
+nnoremap <silent> <C-l> :TlistToggle<CR>
