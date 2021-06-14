@@ -78,3 +78,7 @@ nnoremap ,shh :-1read $HOME/.vim/snippets/bash_descr<CR>
 
 " Tag list
 nnoremap <silent> <C-l> :TlistToggle<CR>
+
+" Airline
+let g:airline_section_b=''
+let g:airline_section_y=''
