@@ -48,17 +48,16 @@ echo "Installing Pathogen..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Plugins from Peter
+# Plugins 
 clone_or_pull https://github.com/ervandew/supertab
 clone_or_pull https://github.com/kien/ctrlp.vim
 clone_or_pull --depth=1 https://github.com/scrooloose/syntastic.git
 clone_or_pull https://github.com/tpope/vim-sensible
 clone_or_pull https://github.com/tpope/vim-fugitive
 clone_or_pull https://github.com/scrooloose/nerdtree
-
-#Phils Additional vim plugins
 clone_or_pull https://github.com/vim-airline/vim-airline
 clone_or_pull https://github.com/airblade/vim-gitgutter
+clone_or_pull https://github.com/yegappan/taglist.git
 
 # Dev tools
 sudo apt install meld htop byobu 
