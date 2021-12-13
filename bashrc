@@ -60,3 +60,5 @@ fi
 while read path; do
   [[ :$PATH: == *":$path:"* ]] || PATH="$path:$PATH"
 done <$PATHS_FILE
+
+export MAKEFLAGS=-j
