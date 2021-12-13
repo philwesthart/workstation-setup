@@ -60,6 +60,9 @@ clone_or_pull https://github.com/scrooloose/nerdtree
 clone_or_pull https://github.com/vim-airline/vim-airline
 clone_or_pull https://github.com/airblade/vim-gitgutter
 
+clone_or_pull https://github.com/xolox/vim-easytags.git
+clone_or_pull https://github.com/xolox/vim-misc.git
+
 # Dev tools
 sudo apt install meld htop byobu 
 

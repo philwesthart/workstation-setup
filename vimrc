@@ -73,3 +73,15 @@ nnoremap ,ch :-1read $HOME/.vim/snippets/c_descr<CR>
 nnoremap ,pyh :-1read $HOME/.vim/snippets/py_descr<CR>
 nnoremap ,shh :-1read $HOME/.vim/snippets/bash_descr<CR>
 
+" Tag list
+nnoremap <silent> <C-l> :TlistToggle<CR>
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Auto_Update = 1
+
+" ctags
+" automatically update ctags on write
+autocmd BufWritePost * exe ":UpdateTags"
+
+" Airline
+let g:airline_section_b=''
+let g:airline_section_y=''
