@@ -24,12 +24,15 @@ ln -sfT "$DIR/bashrc" "$HOME/.bashrc"
 ln -sfT "$DIR/vimrc" "$HOME/.vimrc"
 ln -sfT "$DIR/inputrc" "$HOME/.inputrc"
 ln -sfT "$DIR/gdbinit" "$HOME/.gdbinit"
+
 # link .vim dir
 ln -nsf "$DIR/vim" "$HOME/.vim"
 
 # vim stuff
+
 function clone_or_pull() {
   short_name=$(echo $@ | sed 's/\.git//g' | sed 's/.*\///g')
+
   if [ -d "$DIR/vim/bundle/$short_name" ]; then
     cd "$DIR/vim/bundle/$short_name"
     git pull --rebase
@@ -52,13 +55,16 @@ clone_or_pull --depth=1 https://github.com/scrooloose/syntastic.git
 clone_or_pull https://github.com/tpope/vim-sensible
 clone_or_pull https://github.com/tpope/vim-fugitive
 clone_or_pull https://github.com/scrooloose/nerdtree
+
+#Phils Additional vim plugins
 clone_or_pull https://github.com/vim-airline/vim-airline
 clone_or_pull https://github.com/airblade/vim-gitgutter
+clone_or_pull https://github.com/yegappan/taglist.git
 clone_or_pull https://github.com/xolox/vim-easytags.git
 clone_or_pull https://github.com/xolox/vim-misc.git
 
 # Dev tools
-tools="meld htop byobu"
+tools="meld htop byobu ctags"
 if [ "$(grep -Ei 'debian|buntu|mint' /etc/*release)" ]; then
     sudo apt install $tools
 fi
