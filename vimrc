@@ -63,13 +63,17 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_c_gcc_quiet_messages = {
-        \ "regex": ['cfe\.h']
-        \}
-
+    \ "regex": ['cfe\.h',
+    \           'utassert.h',
+    \           'platform_cfg.h',
+    \           'public_inc_msg.h']
+\}
+let g:syntastic_c_remove_include_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_c_include_dirs = ['/home/vagrant/repos/fcc/fcc_fsw/vsm/inc/']
 
 " Snippets
 nnoremap ,ch :-1read $HOME/.vim/snippets/c_descr<CR>
