@@ -64,7 +64,7 @@ clone_or_pull https://github.com/xolox/vim-easytags.git
 clone_or_pull https://github.com/xolox/vim-misc.git
 
 # Dev tools
-tools="meld htop byobu ctags"
+tools="meld htop byobu ctags ncdu"
 if [ "$(grep -Ei 'debian|buntu|mint' /etc/*release)" ]; then
     sudo apt install $tools
 fi
